@@ -27,7 +27,7 @@ public class OrbitDebugDisplay : MonoBehaviour {
     }
 
     void DrawOrbits () {
-        CelestialBody[] bodies = FindObjectsOfType<CelestialBody> ();
+        CelestialBody[] bodies = FindObjectsByType<CelestialBody> (FindObjectsSortMode.None);
         var virtualBodies = new VirtualBody[bodies.Length];
         var drawPoints = new Vector3[bodies.Length][];
         int referenceFrameIndex = 0;
@@ -108,7 +108,7 @@ public class OrbitDebugDisplay : MonoBehaviour {
     }
 
     void HideOrbits () {
-        CelestialBody[] bodies = FindObjectsOfType<CelestialBody> ();
+        CelestialBody[] bodies = FindObjectsByType<CelestialBody> (FindObjectsSortMode.None);
 
         // Draw paths
         for (int bodyIndex = 0; bodyIndex < bodies.Length; bodyIndex++) {
